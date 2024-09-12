@@ -9,6 +9,11 @@ const kVersion = JSON.parse(readFileSync("package.json")).version;
 const kSecretPath = process.env.SECRET_PATH || randomUUID().substring(0, 8);
 
 const server = http.createServer((req, res) => {
+  // 浏览器测试
+  if (req.url === '/favicon.ico') {
+    res.end();
+    return;
+  }
   // 返回提示字符串
   const response = (msg) => {
     res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
