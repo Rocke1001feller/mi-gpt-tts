@@ -4,7 +4,7 @@ import apiTTS from "./api/tts.mp3.js";
 import { createReadStream, readFileSync, statSync } from "fs";
 import { randomUUID } from "crypto";
 
-const kPort = process.env.PORT || 3000;
+const kPort = process.env.PORT || 3345;
 const kVersion = JSON.parse(readFileSync("package.json")).version;
 const kSecretPath = process.env.SECRET_PATH || randomUUID().substring(0, 8);
 
