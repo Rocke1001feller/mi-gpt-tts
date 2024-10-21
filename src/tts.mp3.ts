@@ -22,7 +22,7 @@ export default async function handler(request, response) {
   const options: any = {};
   const url = new URL("http://127.0.0.1" + request.url);
   for (const [key, value] of url.searchParams.entries()) {
-    options[key] = decodeURIComponent(value);
+    options[key] = value;
   }
 
   const audioStream = new Readable({ read() {} });

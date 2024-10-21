@@ -9,6 +9,7 @@ const kVersion = JSON.parse(readFileSync("package.json")).version;
 const kSecretPath = process.env.SECRET_PATH || randomUUID().substring(0, 8);
 
 const server = http.createServer((req, res) => {
+  console.log(`DEBUG: before all the process URL is: ${req.url}`);
   // 浏览器测试
   if (req.url === '/favicon.ico') {
     res.end();
